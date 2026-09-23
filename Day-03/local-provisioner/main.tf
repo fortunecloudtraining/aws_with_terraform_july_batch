@@ -7,7 +7,7 @@
 
 resource "aws_key_pair" "custom_key" {
   key_name   = "custom-key"
-  public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDjauuO1RQkr5Uf1nUV+uqcIBUK9dSjUWqqPNBObZw2d admin@DESKTOP-GT4TCAG"
+  public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOdE8iK+ztBHGXMlcSi0fP48vhNLeHir/i2jsGT5Yb7N admin@DESKTOP-A6R6UMM"
 }
 
 
@@ -20,18 +20,9 @@ resource "aws_instance" "example" {
   vpc_security_group_ids = [aws_security_group.day_03_sg.id]
   key_name = aws_key_pair.custom_key.key_name
 
-connection {
-  host = self.public_ip
-  user = "ubuntu"
-  type = "ssh"
-  private_key = file("C:\\aws_with_terraform_july_batch\\Day-03\\custom-key.pem")
-  timeout = "4m"
-}
-
-provisioner "file" {
-  source = "C:\\aws_with_terraform_july_batch\\Day-03\\index.html"
-  destination = "/home/ubuntu/index.html"
-}
+  provisioner "local-exec" {
+    command = "echo The instance ${self.public_ip} is now running >> instance_info.txt"
+  }
 
 
   tags = {
