@@ -81,3 +81,5 @@ C:\aws_with_terraform_july_batch\environments\networking\VPC\dev\errored.tfstate
 C:\aws_with_terraform_july_batch\environments\compute\EC2\dev\.terraform
 C:\aws_with_terraform_july_batch\environments\compute\EC2\dev\*
 environments/compute/EC2/dev/.terraform.lock.hcl
+C:\aws_with_terraform_july_batch\environments\security\security-groups\dev\.terraform
+environments/security/security-groups/dev/.terraform.lock.hcl
