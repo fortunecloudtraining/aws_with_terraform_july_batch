@@ -83,3 +83,6 @@ C:\aws_with_terraform_july_batch\environments\compute\EC2\dev\*
 environments/compute/EC2/dev/.terraform.lock.hcl
 C:\aws_with_terraform_july_batch\environments\security\security-groups\dev\.terraform
 environments/security/security-groups/dev/.terraform.lock.hcl
+C:\aws_with_terraform_july_batch\modules\Storage\S3
+C:\aws_with_terraform_july_batch\environments\storage\S3\dev\.terraform
+C:\aws_with_terraform_july_batch\environments\storage\S3\dev\.terraform.lock.hcl
