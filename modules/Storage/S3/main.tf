@@ -1,36 +1,66 @@
-resource "aws_s3_bucket" "example" {
+############################################################
+# S3 Bucket
+############################################################
+
+resource "aws_s3_bucket" "this" {
   bucket = var.bucket_name
 
-  tags = {
-    Name        = "${var.environment}-space901234"
-    environment = var.environment
-  }
+  tags = merge(
+    {
+      Name        = var.bucket_name
+      Environment = var.environment
+    },
+    var.tags
+  )
 }
-resource "aws_s3_bucket_versioning" "versioning_example" {
-  bucket = aws_s3_bucket.example.id
+
+############################################################
+# Versioning
+############################################################
+
+resource "aws_s3_bucket_versioning" "this" {
+  bucket = aws_s3_bucket.this.id
+
   versioning_configuration {
-    status = var.aws_s3_bucket_versioning
+    status = "Enabled"
   }
 }
-resource "aws_s3_bucket_ownership_controls" "example" {
-  bucket = aws_s3_bucket.example.id
+
+############################################################
+# Encryption
+############################################################
+
+resource "aws_s3_bucket_server_side_encryption_configuration" "this" {
+  bucket = aws_s3_bucket.this.id
+
   rule {
-    object_ownership = "BucketOwnerPreferred"
+    apply_server_side_encryption_by_default {
+      sse_algorithm = "AES256"
+    }
   }
 }
 
-resource "aws_s3_bucket_acl" "example" {
-  depends_on = [aws_s3_bucket_ownership_controls.example]
+############################################################
+# Block Public Access
+############################################################
 
-  bucket = aws_s3_bucket.example.id
-  acl    = var.aws_s3_bucket_acl
-}
-
-resource "aws_s3_bucket_public_access_block" "example" {
-  bucket = aws_s3_bucket.example.id
+resource "aws_s3_bucket_public_access_block" "this" {
+  bucket = aws_s3_bucket.this.id
 
   block_public_acls       = true
   ignore_public_acls      = true
   block_public_policy     = true
   restrict_public_buckets = true
+}
+
+############################################################
+# Ownership Controls
+############################################################
+
+resource "aws_s3_bucket_ownership_controls" "this" {
+  bucket = aws_s3_bucket.this.id
+
+  rule {
+    object_ownership = "BucketOwnerEnforced"
+  }
 }

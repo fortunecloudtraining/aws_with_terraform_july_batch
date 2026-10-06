@@ -90,3 +90,8 @@ C:\aws_with_terraform_july_batch\environments\DNS\.terraform
 C:\aws_with_terraform_july_batch\environments\DNS\.terraform.lock.hcl
 environments/security/acm/.terraform.lock.hcl
 environments/DNS/.terraform.lock.hcl
+C:\aws_with_terraform_july_batch\environments\storage\S3\dev\.terraform.lock.hcl
+C:\aws_with_terraform_july_batch\environments\storage\S3\dev\.terraform
+C:\aws_with_terraform_july_batch\environments\vpc-Peering\.terraform
+C:\aws_with_terraform_july_batch\environments\vpc-Peering\.terraform.lock.hcl
+'environments/vpc-Peering/.terraform.lock.hcl
