@@ -95,3 +95,5 @@ C:\aws_with_terraform_july_batch\environments\storage\S3\dev\.terraform
 C:\aws_with_terraform_july_batch\environments\vpc-Peering\.terraform
 C:\aws_with_terraform_july_batch\environments\vpc-Peering\.terraform.lock.hcl
 'environments/vpc-Peering/.terraform.lock.hcl
+environments/network/vpc/dev/.terraform environments/network/vpc/dev/.terraform.lock.hcl
+environments/network/vpc/dev/.terraform.lock.hcl
