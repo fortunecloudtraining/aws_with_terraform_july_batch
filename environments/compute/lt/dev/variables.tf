@@ -1,6 +1,13 @@
+#################################################
+# AWS
+#################################################
 
+variable "aws_region" {
 
+  type = string
 
+  default = "ap-south-1"
+}
 
 #################################################
 # ENVIRONMENT
@@ -21,21 +28,41 @@ variable "project_name" {
 }
 
 #################################################
-# VPC
+# EC2
 #################################################
 
-variable "vpc_id" {
+variable "instance_type" {
+
+  type = string
+
+  default = "t2.micro"
+}
+
+variable "key_name" {
 
   type = string
 }
 
 #################################################
-# SSH ACCESS
+# AUTO SCALING
 #################################################
 
-variable "allowed_ssh_cidr" {
+variable "min_size" {
 
-  type = list(string)
+  type = number
+}
 
-  default = ["0.0.0.0/0"]
+variable "max_size" {
+
+  type = number
+}
+
+variable "desired_capacity" {
+
+  type = number
+}
+
+variable "domain_name" {
+
+  type = string
 }

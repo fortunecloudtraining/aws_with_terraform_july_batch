@@ -79,19 +79,15 @@ module "route_tables" {
   private_subnet_ids = module.subnets.private_subnet_ids
 }
 
-# module "security_groups" {
+module "security_groups" {
 
-#   source = "./sg"
+  source = "./sg"
 
-#   vpc_id = module.vpc.vpc_id
+  vpc_id = module.vpc.vpc_id
 
-#   environment = var.environment
-
-#   admin_access_cidr = var.admin_access_cidr
-
-#   common_tags = local.common_tags
-#   vpc_cidr    = var.vpc_cidr
-# }
+  environment = var.environment
+  project_name = var.project_name
+}
 
 # module "endpoints" {
 

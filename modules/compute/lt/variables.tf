@@ -1,7 +1,3 @@
-
-
-
-
 #################################################
 # ENVIRONMENT
 #################################################
@@ -21,21 +17,48 @@ variable "project_name" {
 }
 
 #################################################
-# VPC
+# INSTANCE CONFIGURATION
 #################################################
 
-variable "vpc_id" {
+variable "instance_type" {
+
+  type = string
+
+  default = "t3.micro"
+}
+
+variable "key_name" {
 
   type = string
 }
 
 #################################################
-# SSH ACCESS
+# SECURITY GROUP
 #################################################
 
-variable "allowed_ssh_cidr" {
+variable "ec2_security_group_id" {
 
-  type = list(string)
+  type = string
+}
 
-  default = ["0.0.0.0/0"]
+#################################################
+# ROOT VOLUME
+#################################################
+
+variable "root_volume_size" {
+
+  type = number
+
+  default = 30
+}
+
+variable "root_volume_type" {
+
+  type = string
+
+  default = "gp2"
+}
+
+variable "aws_region" {
+  type = string
 }

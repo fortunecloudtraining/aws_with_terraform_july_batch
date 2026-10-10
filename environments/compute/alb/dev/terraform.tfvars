@@ -1,17 +1,13 @@
 #################################################
-# ALB SG
+# ENVIRONMENT
 #################################################
 
-output "alb_security_group_id" {
-
-  value = aws_security_group.alb_sg.id
-}
+environment = "dev"
 
 #################################################
-# EC2 SG
+# PROJECT
 #################################################
 
-output "ec2_security_group_id" {
+project_name = "prod-web-app"
 
-  value = aws_security_group.ec2_sg.id
-}
+aws_region = "ap-south-1"

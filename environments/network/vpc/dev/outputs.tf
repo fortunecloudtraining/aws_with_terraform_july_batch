@@ -18,12 +18,16 @@ output "nat_gateway_ids" {
   value = module.aws_vpc.nat_gateway_ids
 }
 
-# output "eks_cluster_sg_id" {
+output "alb_security_group_id" {
 
-#   value = module.aws_vpc.eks_cluster_sg_id
-# }
+  value = module.aws_vpc.alb_sg_id
+}
 
-# output "eks_node_sg_id" {
+#################################################
+# EC2 SG
+#################################################
 
-#   value = module.aws_vpc.eks_node_sg_id
-# }
+output "ec2_security_group_id" {
+
+  value = module.aws_vpc.ec2_security_group_id
+}

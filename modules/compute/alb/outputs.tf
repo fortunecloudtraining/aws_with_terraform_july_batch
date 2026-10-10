@@ -1,41 +1,39 @@
-
-
-
-
 #################################################
-# ENVIRONMENT
+# ALB ID
 #################################################
 
-variable "environment" {
+output "alb_id" {
 
-  type = string
+  value = aws_lb.alb.id
 }
 
 #################################################
-# PROJECT
+# ALB ARN
 #################################################
 
-variable "project_name" {
+output "alb_arn" {
 
-  type = string
+  value = aws_lb.alb.arn
 }
 
 #################################################
-# VPC
+# ALB DNS NAME
 #################################################
 
-variable "vpc_id" {
+output "alb_dns_name" {
 
-  type = string
+  value = aws_lb.alb.dns_name
 }
 
 #################################################
-# SSH ACCESS
+# ALB ZONE ID
 #################################################
 
-variable "allowed_ssh_cidr" {
+output "alb_zone_id" {
 
-  type = list(string)
-
-  default = ["0.0.0.0/0"]
+  value = aws_lb.alb.zone_id
 }
+
+#################################################
+# LISTENER ARN
+#################################################

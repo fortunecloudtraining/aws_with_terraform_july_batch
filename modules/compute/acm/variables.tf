@@ -1,7 +1,3 @@
-
-
-
-
 #################################################
 # ENVIRONMENT
 #################################################
@@ -12,30 +8,37 @@ variable "environment" {
 }
 
 #################################################
-# PROJECT
+# ACM
 #################################################
 
-variable "project_name" {
+variable "domain_name" {
 
   type = string
 }
 
-#################################################
-# VPC
-#################################################
-
-variable "vpc_id" {
-
-  type = string
-}
-
-#################################################
-# SSH ACCESS
-#################################################
-
-variable "allowed_ssh_cidr" {
+variable "subject_alternative_names" {
 
   type = list(string)
 
-  default = ["0.0.0.0/0"]
+  default = []
+}
+
+variable "hosted_zone_id" {
+
+  type = string
+}
+
+#################################################
+# TAGS
+#################################################
+
+variable "common_tags" {
+
+  type = map(string)
+
+  default = {}
+}
+
+variable "aws_region" {
+  
 }

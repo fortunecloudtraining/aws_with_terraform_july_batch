@@ -1,41 +1,31 @@
-
-
-
-
 #################################################
 # ENVIRONMENT
 #################################################
 
-variable "environment" {
-
-  type = string
-}
+environment = "dev"
 
 #################################################
 # PROJECT
 #################################################
 
-variable "project_name" {
-
-  type = string
-}
+project_name = "prod-web-app"
 
 #################################################
-# VPC
+# EC2
 #################################################
 
-variable "vpc_id" {
+instance_type = "t3.micro"
 
-  type = string
-}
+key_name = "fctp-key-new"
 
 #################################################
-# SSH ACCESS
+# AUTO SCALING
 #################################################
 
-variable "allowed_ssh_cidr" {
+min_size = 2
 
-  type = list(string)
+max_size = 4
 
-  default = ["0.0.0.0/0"]
-}
+desired_capacity = 3
+
+domain_name = "backend.kunalt.online"
