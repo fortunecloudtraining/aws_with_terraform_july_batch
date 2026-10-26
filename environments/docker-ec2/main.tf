@@ -40,7 +40,7 @@ resource "aws_instance" "docker_server" {
 
   subnet_id = aws_subnet.public.id
 
-  key_name = "docker"
+  key_name = "lab_02_key"
 
   vpc_security_group_ids = [
 

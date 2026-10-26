@@ -7,5 +7,5 @@ output "public_ip" {
 output "ssh_command" {
     description = "SSH command to connect to the EC2 instance"
 
-  value = "ssh -i docker ec2-user@${aws_instance.docker_server.public_ip}"
+  value = "ssh -i lab_02_key.pem ec2-user@${aws_instance.docker_server.public_ip}"
 }
