@@ -1,10 +1,8 @@
 name: main branach push auto trigger pipeline
-
 on:
   push:
     branches:
       - main
-
 jobs:
   say-hello-inline-bash:
     runs-on: windows-2025
