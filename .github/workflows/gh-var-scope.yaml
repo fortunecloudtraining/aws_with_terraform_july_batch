@@ -27,12 +27,8 @@ jobs:
 
   job2: 
     runs-on: ubuntu-22.04
-    env:
-      JOB1_VAR: I_AM_JOB2_SCOPED
     steps: 
-      - name: inspect scopes job 1 step 1
-        env: 
-          STEP1_VAR: I_AM_STEP1_SCOPED
+      - name: inspect scopes job 2 
         run: |
           echo "WORKFLOW_VAR:  $WORKFLOW_VAR" 
           echo "JOB1_VAR: ${JOB1_VAR:-<UNSET>}"
