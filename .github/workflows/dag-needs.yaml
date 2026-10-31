@@ -1,6 +1,6 @@
 name: DAG needs Block pipline to run depedent jobs 
-on:
-  workflow_dispatch: 
+on: 
+  workflow_dispatch:
 
 jobs: 
   job-1: 
