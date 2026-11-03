@@ -50,7 +50,7 @@ jobs:
 
         with:
           # role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          role-to-assume: arn:aws:iam::562768990869:role/github_action_role_oidc_fct
+          role-to-assume: arn:aws:iam::562768990869:role/fct_githubaction_role_tf
           aws-region: ${{ vars.AWS_REGION }}
 
       ############################################################
