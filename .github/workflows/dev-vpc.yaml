@@ -49,7 +49,8 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v5
 
         with:
-          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          # role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          role-to-assume: arn:aws:iam::562768990869:role/github_action_role_oidc_fct
           aws-region: ${{ vars.AWS_REGION }}
 
       ############################################################
